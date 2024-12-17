@@ -10,12 +10,12 @@ This Python script retrieves business names registration data from the [data.gov
   - Business status (e.g., Registered, Deregistered)
   - Start and end registration dates
   - State of registration (e.g., VIC, NSW, ACT)
-  - Match similar business names (partial or exact match)
+  - Matches similar business names (partial or exact match)
   - Custom result limit
 - **Visualizations**:
   - Table View: Displays results in tabular format.
-  - Pie Chart: Shows the proportion of businesses with and without an ABN.
-  - Trend Chart: Displays business registrations over time as a line graph.
+  - Pie Chart: Shows the percentage/No. of businesses with and without an ABN.
+  - Trend Chart: Shows trend of No. of business registrations over a period.
 
 ---
 
@@ -54,19 +54,19 @@ pip install -r requirements.txt
 
 ### Example Commands
 
-#### 1. Display a Table of Registered Businesses
+#### 1. Display a Table of Registered Businesses in NSW
 ```bash
-python script.py --filter-status Registered --filter-visual_type table
+python search_business_names.py --filter-status Registered --filter-registration_state NSW --filter-visual_type 'table'
 ```
 
-#### 2. Show a Pie Chart for Businesses with/without ABN in NSW
+#### 2. Show a Pie Chart for Businesses with/without ABN in VIC with a matching name wine cellars
 ```bash
-python script.py --filter-registration_state NSW --filter-visual_type pie chart
+python search_business_names.py --filter-registration_state VIC --filter-match_similar_business_names 'wine cellars --filter-visual_type 'pie chart'
 ```
 
 #### 3. Generate a Trend Chart of Registrations from 2021 to 2023
 ```bash
-python script.py --filter-registration_date_from 01/01/2021 --filter-registration_date_to 31/12/2023 --filter-visual_type trend
+python search_business_names.py --filter-registration_date_from 01/01/2021 --filter-registration_date_to 31/12/2023 --filter-visual_type trend
 ```
 
 ---
@@ -77,25 +77,3 @@ python script.py --filter-registration_date_from 01/01/2021 --filter-registratio
 - **Trend Chart**: Plots the number of business registrations over time.
 
 ---
-
-## Error Handling
-- The script gracefully handles incorrect arguments or missing data by displaying appropriate error messages.
-- If no results match the filters, the user will be notified.
-
----
-
-## Data Source
-The script retrieves data from the following dataset hosted on [data.gov.au](https://data.gov.au):
-
-- **Dataset ID**: `55ad4b1c-5eeb-44ea-8b29-d410da431be3`
-
----
-
-## Contribution
-Contributions are welcome! Feel free to submit issues or pull requests to improve functionality or add new features.
-
----
-
-## License
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
