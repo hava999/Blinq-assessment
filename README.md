@@ -61,7 +61,7 @@ python search_business_names.py --filter-status Registered --filter-registration
 
 #### 2. Show a Pie Chart for Businesses with/without ABN in VIC with a matching name wine cellars
 ```bash
-python search_business_names.py --filter-registration_state VIC --filter-match_similar_business_names 'wine cellars --filter-visual_type 'pie chart'
+python search_business_names.py --filter-registration_state VIC --filter-match_similar_business_names 'wine cellars' --filter-visual_type 'pie chart'
 ```
 
 #### 3. Generate a Trend Chart of Registrations from 2021 to 2023
