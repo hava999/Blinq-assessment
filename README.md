@@ -77,3 +77,12 @@ python search_business_names.py --filter-registration_date_from 01/01/2021 --fil
 - **Trend Chart**: Plots the number of business registrations over time.
 
 ---
+
+## Tips for users
+-- **Results take longer**: Try to use the filters to as granular as you can.
+-- **Want a quick glance of results**: Try to use the --filter-limit to display the inital records.
+
+## Comments
+-- **Similarity rank**: Had to use traditional sql filters rather than advanced similarity calculations using extended python libraries which is a limitation with datastore_search_sql. 
+-- **Pagination**: batch_size and offset parameters are used for pagination. Batch size is customisable based on the request limit on the API.
+
